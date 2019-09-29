@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  validates :caption, presence: true
+
   belongs_to :user
 
   has_many :photos, dependent: :destroy
