@@ -2,34 +2,25 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { FactoryBot.create(:user) }
+  let(:other_user) { FactoryBot.create(:user) }
   describe 'validation' do
     it "有効なfactoryを持つ" do
       expect(FactoryBot.build(:user)).to be_valid
     end
 
-    it "nameがなければ無効" do
-      user = FactoryBot.build(:user, name: nil)
-      user.valid?
-      expect(user.errors[:name]).to include("can't be blank")
+    it 'userが存在しない場合無効であること' do
+      user.name = ''
+      expect(user).to_not be_valid
     end
 
-    it "emailがなければ無効" do
-      user = FactoryBot.build(:user, email: nil)
-      user.valid?
-      expect(user.errors[:email]).to include("can't be blank")
+    it 'emailが存在しない場合無効であること' do
+      user.email = ''
+      expect(user).to_not be_valid
     end
 
-    it "passwordがなければ無効" do
-      user = FactoryBot.build(:user, password: nil)
-      user.valid?
-      expect(user.errors[:password]).to include("can't be blank")
-    end
-
-    it "重複したメールアドレスなら無効な状態" do
-      FactoryBot.create(:user, email: "aaron@example.com")
-      user = FactoryBot.build(:user, email: "aaron@example.com")
-      user.valid?
-      expect(user.errors[:email]).to include("has already been taken")
+    it 'passwordが存在しない場合無効であること' do
+      user.password = ''
+      expect(user).to_not be_valid
     end
 
     it 'パスワードは6文字以上であること' do
@@ -44,12 +35,11 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
-    it 'ユーザー名が存在しない場合無効であること' do
-      user.name = ''
+
+    it 'メールアドレスが既に存在している場合無効であること' do
+      user.email = other_user.email
       expect(user).to_not be_valid
     end
+
   end
-
-
-
 end
