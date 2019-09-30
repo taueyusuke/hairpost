@@ -1,0 +1,31 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_or_length, "フリーワード" %>
+  <%= f.search_field :caption_or_length_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+<% @posts.each do |post| %>
+  <div class="container">
+    <div class="row-md-4 row-md-2 mx-auto">
+      <div class="card-wrap">
+        <div class="card">
+          <%= link_to(post_path(post)) do %>
+            <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <div class="row parts">
+            </div>
+            <div id="like-text-post-<%= post.id.to_s %>">
+              <%= render "like_text", { likes: post.likes } %>
+            </div>
+            <span><strong><%= post.user.name %></strong></span>
+            <span><%= post.caption %></span>
+            <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<div class="text-center">
+  <%= paginate @posts %>
+</div>

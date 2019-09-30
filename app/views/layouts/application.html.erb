@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hairpost</title>
+    <title>AppName</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,17 +10,25 @@
   </head>
 
   <body>
-    <%= render 'partial/navbar' if current_user %>
-    <% if flash[:notice] %>
-    <div class="alert alert-info">
-      <%= flash[:notice] %>
+    <div id="wrapper">
+      <%= render 'partial/navbar' %>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+
+      <%= render 'partial/footer' %>
     </div>
-    <% end %>
-    <% if flash[:alert] %>
-    <div class="alert alert-danger">
-      <%= flash[:alert] %>
-    </div>
-    <% end %>
-    <%= yield %>
   </body>
 </html>
