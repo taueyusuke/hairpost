@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  protect_from_forgery except: %i[new create]
 
   protected
 
