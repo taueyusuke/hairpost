@@ -1,0 +1,21 @@
+<% @post_ranking.each do |post| %>
+  <div class="container">
+    <div class="row-md-4 row-md-2 mx-auto">
+      <div class="card-wrap">
+        <div class="card">
+          <%= link_to(post_path(post)) do %>
+            <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <div class="row parts">
+            </div>
+            <span><strong><%= post.user.name %></strong></span>
+            <span><%= post.caption %></span>
+            <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "post-time no-text-decoration" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= paginate @post_ranking %>
