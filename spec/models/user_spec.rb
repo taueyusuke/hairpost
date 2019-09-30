@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { FactoryBot.create(:user) }
   let(:other_user) { FactoryBot.create(:user) }
   describe 'validation' do
-    it "有効なfactoryを持つ" do
+    it '有効なfactoryを持つ' do
       expect(FactoryBot.build(:user)).to be_valid
     end
 
@@ -35,11 +37,9 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
-
     it 'メールアドレスが既に存在している場合無効であること' do
       user.email = other_user.email
       expect(user).to_not be_valid
     end
-
   end
 end

@@ -1,5 +1,6 @@
-class User < ApplicationRecord
+# frozen_string_literal: true
 
+class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
   has_many :likes
@@ -14,7 +15,7 @@ class User < ApplicationRecord
 
   validates :password, presence: true, length: { minimum: 6 }
 
-  validates :email, presence: true, length: {maximum: 255}
+  validates :email, presence: true, length: { maximum: 255 }
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)

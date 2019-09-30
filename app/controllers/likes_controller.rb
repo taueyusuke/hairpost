@@ -1,20 +1,18 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :authenticate_user!, only: %i[edit update destroy new create]
 
   def create
     @like = current_user.likes.build(like_params)
     @post = @like.post
-    if @like.save
-      respond_to :js
-    end
+    respond_to :js if @like.save
   end
 
   def destroy
     @like = Like.find_by(id: params[:id])
     @post = @like.post
-    if @like.destroy
-      respond_to :js
-    end
+    respond_to :js if @like.destroy
   end
 
   def index
@@ -25,6 +23,7 @@ class LikesController < ApplicationController
   end
 
   private
+
   def like_params
     params.permit(:post_id)
   end
