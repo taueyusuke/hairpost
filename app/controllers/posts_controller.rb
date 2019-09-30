@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[edit update destroy new create]
 
   before_action :set_post, only: %i(show destroy)
 
@@ -21,7 +21,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page]).includes(:photos, :user).order('created_at DESC')
   end
 
   def show
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:caption, photos_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:post).permit(:sex, :length, :haircolor, :hairmemu, :caption, photos_attributes: [:image]).merge(user_id: current_user.id)
   end
 
   def set_post
