@@ -6,5 +6,4 @@ class UsersController < ApplicationController
                  .order('created_at desc')
                  .includes(:user, :photos)
   end
-  end
 end

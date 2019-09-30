@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:comment) { FactoryBot.create(:comment) }
+
+  describe 'コメントが有効' do
+    it 'コメントが有効であること' do
+      expect(comment).to be_valid
+    end
+  end
 end
