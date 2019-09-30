@@ -7,20 +7,50 @@
       <div class="card-body">
         <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
           <div class="form-group row mt-2">
-            <div class="col-auto pr-0">
-              <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
-            </div>
             <div class="col pl-0">
               <%= f.text_field :caption, class: "form-control border-0", placeholder: "キャプションを書く" %>
             </div>
           </div>
           <div class="mb-3">
-
             <%= f.fields_for :photos do |i| %>
               <%= i.file_field :image %>
             <% end %>
-
           </div>
+          <th class="w85 vaM taC nowrap">性別</th>
+          <td colspan="3" style="width: 633px;">
+            <ul class="cFix">
+              <label><%= f.radio_button :sex, "メンズ", checked: "checked" %>メンズ</label>
+              <label><%= f.radio_button :sex, "レディース" %>レディース</label>
+            </ul>
+          </td>
+          <th class="w85 vaM taC nowrap">髪の長さ</th>
+          <td colspan="3" style="width: 633px;">
+            <ul class="cFix">
+              <label><%= f.radio_button :length, "ショート", checked: "checked" %>ショート</label>
+              <label><%= f.radio_button :length, "ミディアム" %>ミディアム</label>
+              <label><%= f.radio_button :length, "ロング" %>ロング</label>
+            </ul>
+          </td>
+          <th class="w85 vaM taC nowrap">カラー</th>
+          <td colspan="3" style="width: 633px;">
+            <ul class="cFix">
+              <label><%= f.radio_button :haircolor, "ブラウン・ベージュ系" %>ブラウン・ベージュ系</label>
+              <label><%= f.radio_button :haircolor, "イエロー・オレンジ系" %>イエロー・オレンジ系</label>
+              <label><%= f.radio_button :haircolor, "レッド・ピンク系" %>レッド・ピンク系</label>
+              <label><%= f.radio_button :haircolor, "アッシュ・ブラック系" %>アッシュ・ブラック系</label>
+              <label><%= f.radio_button :haircolor, "その他カラー" %>その他カラー</label>
+              <label><%= f.radio_button :haircolor, "カラーなし", checked: "checked" %>カラーなし</label>
+            </ul>
+          </td>
+          <th class="w85 vaM taC nowrap">メニュー</th>
+          <td colspan="3" style="width: 633px;">
+            <ul class="cFix">
+              <label><%= f.radio_button :hairmemu, "パーマ" %>パーマ</label>
+              <label><%= f.radio_button :hairmemu, "縮毛矯正" %>縮毛矯正</label>
+              <label><%= f.radio_button :hairmemu, "デジタルパーマ" %>デジタルパーマ</label>
+              <label><%= f.radio_button :hairmemu, "パーマ・縮毛矯正なし", checked: "checked" %>パーマ・縮毛矯正なし</label>
+            </ul>
+          </td>
           <%= f.submit "投稿する", class: "btn btn-primary" %>
         <% end %>
       </div>
