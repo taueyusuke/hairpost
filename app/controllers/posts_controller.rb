@@ -23,8 +23,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).page(params[:page]).includes(:photos, :user).order('created_at DESC')
+    @post = Post.ransack(params[:q])
+    @posts = @post.result(distinct: true).page(params[:page]).includes(:photos, :user).order('created_at DESC')
   end
 
   def show; end
