@@ -74,3 +74,4 @@ gem 'kaminari-bootstrap'
 gem 'mini_magick'
 gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'rails_12factor', group: :production
