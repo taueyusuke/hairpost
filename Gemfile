@@ -74,5 +74,5 @@ gem 'kaminari-bootstrap'
 gem 'mini_magick', '4.7.0'
 gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'fog-aws', '~> 2.0.0'
 gem 'fog', '~> 1.41.0'
+gem 'fog-aws', '~> 2.0.0'
