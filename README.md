@@ -2,6 +2,8 @@
 髪型を投稿するwebサービスです。<br>
 自分の髪型をどうするか悩んだ時に他人の投稿を参考にすることで選択肢が増えると思い作成いたしました。<br>
 https://hairpost.herokuapp.com/
+## 開発工程
+masterブランチに直接pushせず、workという作業用のブランチを切ってそこにPush、Masterにmergeしました。<br>
 ## 使用技術や機能一覧
 * ユーザー管理機能(devise)
     * 新規ユーザー登録機能  
@@ -26,8 +28,6 @@ Rspec<br>
 単体テスト<br>
 ## DB
 Mysql<br>
-## 開発工程
-masterブランチに直接pushせず、workという作業用のブランチを切ってそこにPush、Masterにmergeしました。<br>
 ## 環境
 Ruby２.５.３<br>
 Rails５.２.３
