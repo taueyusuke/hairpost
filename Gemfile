@@ -66,14 +66,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'bootstrap', '~> 4.3.1'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.1.0'
 gem 'devise', '~> 4.7.1'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.7.0'
 gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'fog', '~> 1.41.0'
-gem 'fog-aws'
+gem 'fog-aws', '~> 2.0.0'
 gem 'rails_12factor'
