@@ -29,4 +29,4 @@ Mysql<br>
 masterブランチに直接pushせず、workという作業用のブランチを切ってそこにPush、Masterにmergeしました。<br>
 ## 環境
 Ruby２.５.３<br>
-Rails５.２.３<br>
+Rails５.２.３
