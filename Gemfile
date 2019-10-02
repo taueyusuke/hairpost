@@ -76,3 +76,4 @@ gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'fog', '~> 1.41.0'
 gem 'fog-aws'
+gem 'rails_12factor'
