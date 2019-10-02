@@ -12,6 +12,7 @@ https://hairpost.herokuapp.com/
     * 投稿機能  
     * 詳細表示機能  
     * 画像アップロード機能(CarrierWave)  
+    * Amazon s3  
     * 投稿の削除機能  
     * 記事一覧表示機能  
     * 記事検索機能  
