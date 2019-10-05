@@ -1,7 +1,7 @@
 # 概要
 髪型を投稿するwebサービスです。<br>
 自分の髪型をどうするか悩んだ時に他人の投稿を参考にすることで選択肢が増えると思い作成いたしました。<br>
-https://hairpost.herokuapp.com/
+https://hairstylepost.herokuapp.com/
 ## 開発工程
 masterブランチに直接pushせず、workという作業用のブランチを切ってそこにPush、Masterにmergeしました。<br>
 ## 使用技術や機能一覧
