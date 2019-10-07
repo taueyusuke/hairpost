@@ -21,7 +21,7 @@ masterブランチに直接pushせず、workという作業用のブランチを
     * コメント機能  
     * ページネーション機能(kaminari)  
     * 検索機能(ransack)  
-* コード整形(rubicon)  
+* コード整形(RuboCop)  
 ## テスト
 Rspec<br>
 統合テスト<br>
