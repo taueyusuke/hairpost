@@ -4,6 +4,9 @@
 https://hairstylepost.herokuapp.com/
 ## 開発工程
 masterブランチに直接pushせず、workという作業用のブランチを切ってそこにPush、Masterにmergeしました。<br>
+## 環境
+Ruby２.５.３<br>
+Rails５.２.３<br>
 ## 使用技術や機能一覧
 * ユーザー管理機能(devise)
     * 新規ユーザー登録機能  
@@ -28,6 +31,4 @@ Rspec<br>
 単体テスト<br>
 ## DB
 Mysql<br>
-## 環境
-Ruby２.５.３<br>
-Rails５.２.３
+
